@@ -163,13 +163,13 @@
     fill="url(#cvG)"
     letter-spacing="-5">CV</text>
 
-  <!-- LA CENTRAL VIP -->
+  <!-- CENTRAL KITS -->
   <text x="200" y="262"
     text-anchor="middle"
     font-family="'Arial Black', 'Arial', sans-serif"
     font-size="22" font-weight="900"
     fill="url(#goldG)"
-    letter-spacing="3.5">LA CENTRAL VIP</text>
+    letter-spacing="3.5">CENTRAL KITS</text>
 
   <!-- Thin gold line divider -->
   <line x1="84" y1="272" x2="316" y2="272" stroke="url(#goldG)" stroke-width="0.9" opacity="0.5"/>

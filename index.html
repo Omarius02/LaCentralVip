@@ -19,7 +19,7 @@
 }
 html{scroll-behavior:smooth}
 body{
-  background:#050505 url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1920&q=80') center/cover fixed;
+  background:#050505;
   color:var(--w);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden
 }
 /* All sections semi-transparent so the pitch shows through while scrolling */
@@ -110,7 +110,11 @@ section{padding:76px 5%}
 .sec-label{font-size:.67rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
 .sec-label.green{color:var(--green)}
 .sec-title{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:.01em}
-.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:14px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:14px;background:linear-gradient(135deg,rgba(201,168,76,.07) 0%,rgba(5,5,5,.45) 70%);border:1px solid var(--gold-b);border-radius:14px;padding:40px 44px 34px;position:relative;overflow:hidden}
+.sec-head::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-l),var(--gold))}
+.sec-head[data-wm]::after{content:attr(data-wm);position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:'Oswald',sans-serif;font-size:6.8rem;font-weight:900;color:rgba(255,255,255,.022);letter-spacing:-.04em;pointer-events:none;white-space:nowrap}
+.sec-head .sec-title{font-size:clamp(2.2rem,5vw,3.2rem)}
+.sec-head-desc{color:var(--gl);font-size:.9rem;margin-top:10px;max-width:500px;line-height:1.7}
 .see-all{font-size:.77rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:6px;transition:gap .2s;white-space:nowrap}
 .see-all:hover{gap:11px}
 
@@ -289,14 +293,23 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   .retro-bar{padding:24px 20px}
   .world-hero{padding:28px 22px}
   .buy-card{padding:36px 22px}
+  .sec-head{padding:28px 22px 24px}
 }
+/* Fixed background layer — works on all devices incl. iOS */
+.bg-layer{position:fixed;inset:0;z-index:-2;background:url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1920&q=80') center/cover no-repeat}
+/* League section dividers inside catalog grid */
+.ld{grid-column:1/-1;display:flex;align-items:center;padding:28px 0 10px;font-family:'Oswald',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:8px}
+.ld::before,.ld::after{content:'';flex:1;height:1px}
+.ld::before{background:linear-gradient(90deg,transparent,var(--gold-b));margin-right:14px}
+.ld::after{background:linear-gradient(90deg,var(--gold-b),transparent);margin-left:14px}
 </style>
 </head>
 <body>
+<div class="bg-layer"></div>
 
 <nav id="nav">
   <a href="#inicio" class="logo">
-    <img src="assets/logo.png" alt="" class="nav-logo-img" onerror="this.style.display='none'" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0">
+    <img src="assets/logo.svg" alt="" class="nav-logo-img" onerror="this.style.display='none'" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0">
     LA CENTRAL <span>VIP</span>
   </a>
   <ul class="nav-ul" id="navUl">
@@ -316,7 +329,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   <div class="hero-inner">
     <div class="eyebrow">Temporada 2025–2026 disponible</div>
     <div class="hero-logo-wrap">
-      <img src="assets/logo.png" alt="La Central VIP" class="hero-logo-img" onerror="this.style.display='none'">
+      <img src="assets/logo.svg" alt="La Central VIP" class="hero-logo-img" onerror="this.style.display='none'">
       <svg class="hero-logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <radialGradient id="bg" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#050d1a"/></radialGradient>
@@ -362,7 +375,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
 <section id="consulta" class="consulta-top">
   <div class="consulta-card reveal">
     <div class="consulta-logo">
-      <img src="assets/logo.png" alt="La Central VIP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="assets/logo.svg" alt="La Central VIP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <svg style="display:none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="bg2" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#050d1a"/></radialGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e5c96a"/><stop offset="50%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#a07830"/></linearGradient></defs><circle cx="60" cy="60" r="58" fill="#0a1628"/><circle cx="60" cy="60" r="55" fill="url(#bg2)"/><circle cx="60" cy="60" r="56" fill="none" stroke="url(#g2)" stroke-width="3"/><text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="42" font-weight="900" font-style="italic" fill="url(#g2)">CV</text></svg>
     </div>
     <div class="consulta-body">
@@ -378,47 +391,13 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   </div>
 </section>
 
-<section id="novedades">
-  <div class="sec-head reveal">
-    <div><div class="sec-label">Recién llegadas</div><h2 class="sec-title">Novedades 2025–26</h2></div>
-    <a href="#catalogo" class="see-all">Ver todas →</a>
-  </div>
-  <div class="grid" id="featuredGrid"></div>
-</section>
-
-<section id="mundial" style="background:rgba(10,10,10,.80)">
-  <div class="world-hero reveal">
-    <div>
-      <div class="wh-kicker">USA · Canada · México · Junio 2026</div>
-      <h2 class="wh-title">Mundial<br>2026</h2>
-      <p class="wh-desc">Las camisetas oficiales de todas las selecciones. España, Argentina, Francia, Brasil y mucho más.</p>
-      <a href="#comprar" class="btn-green">🏆 Pedir selección</a>
-    </div>
-    <div class="wh-flags">
-      <div class="flag">🇪🇸</div><div class="flag">🇦🇷</div><div class="flag">🇫🇷</div><div class="flag">🇧🇷</div>
-      <div class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="flag">🇩🇪</div><div class="flag">🇵🇹</div><div class="flag">🇮🇹</div>
-      <div class="flag">🇳🇱</div><div class="flag">🇧🇪</div><div class="flag">🇨🇴</div><div class="flag">🇲🇽</div>
-      <div class="flag">🇺🇾</div><div class="flag">🇲🇦</div><div class="flag">🇯🇵</div>
-    </div>
-  </div>
-  <div class="grid" id="mundialGrid"></div>
-</section>
-
-<section id="retro">
-  <div class="retro-bar reveal">
-    <div>
-      <div class="retro-kicker">Colección histórica</div>
-      <h2>Retro Collection</h2>
-      <p>Las camisetas que marcaron una era. Leyendas que nunca pasan de moda.</p>
-    </div>
-    <div class="retro-price"><span class="am">25€</span><div class="lb">precio único</div></div>
-  </div>
-  <div class="grid" id="retroGrid"></div>
-</section>
-
 <section id="catalogo">
-  <div class="sec-head reveal">
-    <div><div class="sec-label">Todo el stock</div><h2 class="sec-title">Catálogo Completo</h2></div>
+  <div class="sec-head reveal" data-wm="CATÁLOGO">
+    <div>
+      <div class="sec-label">Todo el stock</div>
+      <h2 class="sec-title">Catálogo Completo</h2>
+      <p class="sec-head-desc">Más de 130 camisetas — todas las ligas, temporadas y selecciones. Filtra por liga o tipo.</p>
+    </div>
   </div>
   <div class="filters reveal">
     <div class="fg">
@@ -460,15 +439,67 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   <div class="grid" id="catalogGrid"></div>
 </section>
 
+<section id="novedades">
+  <div class="sec-head reveal" data-wm="25-26">
+    <div>
+      <div class="sec-label">Recién llegadas</div>
+      <h2 class="sec-title">Novedades 2025–26</h2>
+      <p class="sec-head-desc">Las más populares de la temporada. Todas las grandes ligas.</p>
+    </div>
+    <a href="#catalogo" class="see-all">Ver todas →</a>
+  </div>
+  <div class="grid" id="featuredGrid"></div>
+</section>
+
+<section id="mundial" style="background:rgba(10,10,10,.80)">
+  <div class="world-hero reveal">
+    <div>
+      <div class="wh-kicker">USA · Canada · México · Junio 2026</div>
+      <h2 class="wh-title">Mundial<br>2026</h2>
+      <p class="wh-desc">Las camisetas oficiales de todas las selecciones. España, Argentina, Francia, Brasil y mucho más.</p>
+      <a href="#comprar" class="btn-green">🏆 Pedir selección</a>
+    </div>
+    <div class="wh-flags">
+      <div class="flag">🇪🇸</div><div class="flag">🇦🇷</div><div class="flag">🇫🇷</div><div class="flag">🇧🇷</div>
+      <div class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="flag">🇩🇪</div><div class="flag">🇵🇹</div><div class="flag">🇮🇹</div>
+      <div class="flag">🇳🇱</div><div class="flag">🇧🇪</div><div class="flag">🇨🇴</div><div class="flag">🇲🇽</div>
+      <div class="flag">🇺🇾</div><div class="flag">🇲🇦</div><div class="flag">🇯🇵</div>
+    </div>
+  </div>
+  <div class="grid" id="mundialGrid"></div>
+</section>
+
+<section id="retro">
+  <div class="retro-bar reveal">
+    <div>
+      <div class="retro-kicker">Colección histórica</div>
+      <h2>Retro Collection</h2>
+      <p>Las camisetas que marcaron una era. Leyendas que nunca pasan de moda.</p>
+    </div>
+    <div class="retro-price"><span class="am">25€</span><div class="lb">precio único</div></div>
+  </div>
+  <div class="grid" id="retroGrid"></div>
+</section>
+
 <section id="sudamerica" style="background:rgba(10,10,10,.80)">
-  <div class="sec-head reveal">
-    <div><div class="sec-label">El otro fútbol</div><h2 class="sec-title">Sudamérica</h2></div>
+  <div class="sec-head reveal" data-wm="SUDAMÉRICA">
+    <div>
+      <div class="sec-label">El otro fútbol</div>
+      <h2 class="sec-title">Sudamérica</h2>
+      <p class="sec-head-desc">Boca, River, Flamengo y los grandes del fútbol sudamericano.</p>
+    </div>
   </div>
   <div class="grid" id="southGrid"></div>
 </section>
 
 <section id="precios">
-  <div class="sec-head reveal"><div><div class="sec-label">Siempre transparente</div><h2 class="sec-title">Precios</h2></div></div>
+  <div class="sec-head reveal" data-wm="PRECIO">
+    <div>
+      <div class="sec-label">Siempre transparente</div>
+      <h2 class="sec-title">Precios</h2>
+      <p class="sec-head-desc">Sin sorpresas. Lo que ves es lo que pagas.</p>
+    </div>
+  </div>
   <div class="prices">
     <div class="pt reveal d1"><span class="am">20€</span><div class="nm">Temporada 25-26</div><div class="ds">Todas las ligas europeas</div></div>
     <div class="pt reveal d2"><span class="am">20€</span><div class="nm">Mundial 2026</div><div class="ds">Todas las selecciones</div></div>
@@ -499,7 +530,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
 <footer>
   <div class="foot-top">
     <a href="#inicio" class="foot-logo">
-      <img src="assets/logo.png" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none'">
+      <img src="assets/logo.svg" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.style.display='none'">
       LA CENTRAL <span>VIP</span>
     </a>
     <nav class="foot-nav">
@@ -886,6 +917,27 @@ const J=[
 // Badge labels
 const BL={'b-new':'1ª Kit 25-26','b-second':'2ª Kit 25-26','b-retro':'Retro','b-pop':'Popular','b-world':'Mundial 26','b-south':'Sudamérica'};
 
+// League group keys & labels for catalog dividers
+const LKEY=j=>j.badge==='b-new'?'new:'+j.league:j.badge==='b-second'?'sec:'+j.league:j.badge;
+const LGRP={
+  'new:LaLiga':'🇪🇸 LaLiga — 1ª Equipación 25-26',
+  'new:Premier League':'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League — 1ª Equipación 25-26',
+  'new:Serie A':'🇮🇹 Serie A — 1ª Equipación 25-26',
+  'new:Bundesliga':'🇩🇪 Bundesliga — 1ª Equipación 25-26',
+  'new:Ligue 1':'🇫🇷 Ligue 1 — 1ª Equipación 25-26',
+  'new:Otros Europa':'🌐 Otros Europa — 1ª Equipación 25-26',
+  'b-world':'🏆 Mundial 2026',
+  'b-retro':'⏮ Colección Retro',
+  'b-south':'🌎 Sudamérica',
+  'sec:LaLiga':'🇪🇸 LaLiga — 2ª Equipación 25-26',
+  'sec:Premier League':'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League — 2ª Equipación 25-26',
+  'sec:Serie A':'🇮🇹 Serie A — 2ª Equipación 25-26',
+  'sec:Bundesliga':'🇩🇪 Bundesliga — 2ª Equipación 25-26',
+  'sec:Ligue 1':'🇫🇷 Ligue 1 — 2ª Equipación 25-26',
+  'sec:Otros Europa':'🌐 Otros Europa — 2ª Equipación 25-26',
+};
+const LORD=['new:LaLiga','new:Premier League','new:Serie A','new:Bundesliga','new:Ligue 1','new:Otros Europa','b-world','b-retro','b-south','sec:LaLiga','sec:Premier League','sec:Serie A','sec:Bundesliga','sec:Ligue 1','sec:Otros Europa'];
+
 function renderCard(j){
   const s=j.season||(j.type==='Retro'?'Retro':j.type==='Mundial'?'Mundial 2026':'2025-26');
   const flag=j.flag?j.flag+' ':'';
@@ -912,9 +964,22 @@ function attachEvents(el){
   el.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>openM(+c.dataset.id)));
 }
 
-function renderGrid(id,items){
+function renderGrid(id,items,grouped){
   const el=document.getElementById(id);if(!el)return;
-  el.innerHTML=items.length?items.map(renderCard).join(''):'<div class="no-res">No hay resultados.</div>';
+  if(!items.length){el.innerHTML='<div class="no-res">No hay resultados.</div>';attachEvents(el);observeReveal(el);return;}
+  let html='';
+  if(grouped){
+    const groups={};
+    items.forEach(j=>{const k=LKEY(j);if(!groups[k])groups[k]=[];groups[k].push(j);});
+    const keys=LORD.filter(k=>groups[k]);
+    if(keys.length>1){
+      keys.forEach(k=>{
+        html+=`<div class="ld reveal">${LGRP[k]||k}</div>`;
+        html+=groups[k].map(renderCard).join('');
+      });
+    }else{html=items.map(renderCard).join('');}
+  }else{html=items.map(renderCard).join('');}
+  el.innerHTML=html;
   attachEvents(el);observeReveal(el);
 }
 
@@ -923,7 +988,7 @@ renderGrid('featuredGrid',J.filter(j=>j.type==='25-26'&&j.popular));
 renderGrid('mundialGrid',J.filter(j=>j.type==='Mundial'));
 renderGrid('retroGrid',J.filter(j=>j.type==='Retro'));
 renderGrid('southGrid',J.filter(j=>j.league==='Sudamérica'));
-renderGrid('catalogGrid',J);
+renderGrid('catalogGrid',J,true);
 
 // Marquee
 const mq=document.getElementById('mqTrack');
@@ -940,7 +1005,7 @@ function applyFilters(){
   let f=J;
   if(l)f=f.filter(j=>j.league===l);
   if(t)f=f.filter(j=>j.type===t);
-  renderGrid('catalogGrid',f);
+  renderGrid('catalogGrid',f,true);
 }
 document.getElementById('fLeague').addEventListener('change',()=>{
   applyFilters();
@@ -1026,7 +1091,7 @@ function updateTotal(){
   const hasDorsal=cExtras.has('dorsal')||cExtras.has('combo');
   const dorsalInfo=hasDorsal&&(name||num)?`\n🔢 Dorsal: ${num?'#'+num+' ':''}${name}`.trimEnd():'';
   const exLabel=cExtras.has('combo')?'Dorsal + Parche (combo)':[...cExtras].map(x=>({dorsal:'Dorsal',parche:'Parche'}[x]||x)).join(' + ')||'Sin extras';
-  const msg=encodeURIComponent(`Hola! Quiero pedir:\n${cJ.flag||''}${cJ.team}\n📅 ${cJ.type==='Mundial'?'Mundial 2026':cJ.type}\n👕 Talla: ${sz}\n✨ Extras: ${exLabel}${dorsalInfo}\n💰 Total: ${t}€`);
+  const msg=encodeURIComponent(`Hola! Quiero pedir:\n${cJ.flag||''}${cJ.team}\n📅 ${cJ.type==='Mundial'?'Mundial 2026':cJ.type}\n👕 Talla: ${sz}\n✨ Extras: ${exLabel}${dorsalInfo}\n💰 Total: ${t}€\n🖼 Foto: ${cJ.img}`);
   document.getElementById('mBuy').href=`https://t.me/pepe1312x?text=${msg}`;
 }
 ['dorsalName','dorsalNum'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',updateTotal);});

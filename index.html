@@ -490,18 +490,24 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
 /* URGENCY message in hero */
 .urgency-msg{font-size:.76rem;color:rgba(255,255,255,.55);letter-spacing:.06em;margin-top:14px;display:flex;align-items:center;gap:6px;justify-content:center}
 .urgency-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 1.6s ease-in-out infinite;flex-shrink:0}
-/* REVIEWS section */
-.reviews-section{background:rgba(6,6,6,.80)!important}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:1100px;margin:0 auto}
-.review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s}
-.review-card:hover{border-color:var(--gold-b)}
-.review-stars{color:#f5c518;font-size:1rem;letter-spacing:2px}
-.review-text{color:#d0d0d0;font-size:.9rem;line-height:1.7;font-style:italic;flex:1}
-.review-meta{display:flex;align-items:center;gap:10px;padding-top:10px;border-top:1px solid var(--border)}
-.review-avatar{width:34px;height:34px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-b);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.review-author{font-size:.8rem;font-weight:600;color:var(--w)}
-.review-team{font-size:.7rem;color:var(--g)}
-.review-badge{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--green-dim);color:var(--green);border:1px solid var(--green-b);padding:2px 7px;border-radius:10px;margin-left:auto;flex-shrink:0}
+/* CATALOG sidebar layout */
+.catalogo-wrap{display:grid;grid-template-columns:1fr 270px;gap:24px;align-items:start}
+.catalogo-main{min-width:0}
+.catalogo-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:14px}
+.aside-title{font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);padding-bottom:8px;border-bottom:1px solid var(--gold-b)}
+.aside-review{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s}
+.aside-review:hover{border-color:var(--gold-b)}
+.aside-stars{color:#f5c518;font-size:.82rem}
+.aside-text{color:#ccc;font-size:.8rem;line-height:1.6;font-style:italic;flex:1}
+.aside-meta{display:flex;align-items:center;gap:8px;padding-top:6px;border-top:1px solid var(--border)}
+.aside-avatar{width:26px;height:26px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-b);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+.aside-author{font-size:.72rem;font-weight:600;color:var(--w)}
+.aside-team{font-size:.63rem;color:var(--g)}
+.aside-badge{font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--green-dim);color:var(--green);border:1px solid var(--green-b);padding:2px 6px;border-radius:8px;margin-left:auto;flex-shrink:0}
+.player-notice{background:rgba(201,168,76,.06);border:1px solid var(--gold-b);border-radius:10px;padding:16px;font-size:.8rem;color:#ccc;line-height:1.65}
+.player-notice strong{color:var(--gold);display:block;margin-bottom:4px;font-size:.82rem}
+@media(max-width:1000px){.catalogo-wrap{grid-template-columns:1fr}.catalogo-aside{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.aside-title{grid-column:1/-1}.player-notice{grid-column:1/-1}}
+@media(max-width:600px){.catalogo-aside{grid-template-columns:1fr}}
 /* FINAL CTA urgency */
 .final-cta-section{background:linear-gradient(135deg,#080f06 0%,#050505 50%,#060a04 100%)!important;border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b)}
 .cta-final-card{max-width:680px;margin:0 auto;text-align:center}
@@ -627,12 +633,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
         <svg width="44" height="44" viewBox="0 0 24 24" fill="white" opacity=".9"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.4)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg>
       </div>
       <div class="vcard-overlay">
-        <div class="vcard-top">
-          <button class="vcard-mute" title="Activar sonido">
-            <svg class="ico-mute" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-            <svg class="ico-sound" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </button>
-        </div>
+        <div class="vcard-top"></div>
         <div class="vcard-bottom">
           <div class="vcard-tag">Calidad premium</div>
           <div class="vcard-label">Diseño oficial<br>temporada 25-26</div>
@@ -646,12 +647,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
         <svg width="44" height="44" viewBox="0 0 24 24" fill="white" opacity=".9"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.4)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg>
       </div>
       <div class="vcard-overlay">
-        <div class="vcard-top">
-          <button class="vcard-mute" title="Activar sonido">
-            <svg class="ico-mute" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-            <svg class="ico-sound" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </button>
-        </div>
+        <div class="vcard-top"></div>
         <div class="vcard-bottom">
           <div class="vcard-tag">Material top</div>
           <div class="vcard-label">Tejido transpirable<br>y corte perfecto</div>
@@ -665,12 +661,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
         <svg width="44" height="44" viewBox="0 0 24 24" fill="white" opacity=".9"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.4)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg>
       </div>
       <div class="vcard-overlay">
-        <div class="vcard-top">
-          <button class="vcard-mute" title="Activar sonido">
-            <svg class="ico-mute" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-            <svg class="ico-sound" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </button>
-        </div>
+        <div class="vcard-top"></div>
         <div class="vcard-bottom">
           <div class="vcard-tag">Detalles reales</div>
           <div class="vcard-label">Escudo y detalles<br>como el original</div>
@@ -684,12 +675,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
         <svg width="44" height="44" viewBox="0 0 24 24" fill="white" opacity=".9"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.4)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg>
       </div>
       <div class="vcard-overlay">
-        <div class="vcard-top">
-          <button class="vcard-mute" title="Activar sonido">
-            <svg class="ico-mute" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-            <svg class="ico-sound" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </button>
-        </div>
+        <div class="vcard-top"></div>
         <div class="vcard-bottom">
           <div class="vcard-tag">+500 pedidos</div>
           <div class="vcard-label">Clientes satisfechos<br>en toda España</div>
@@ -706,53 +692,6 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   </div>
 </section>
 
-<section class="reviews-section" id="reviews">
-  <div class="sec-head reveal" style="max-width:1100px;margin:0 auto 36px" data-wm="CLIENTES">
-    <div>
-      <div class="sec-label">Lo que dicen nuestros clientes</div>
-      <h2 class="sec-title">+500 Clientes Satisfechos</h2>
-      <p class="sec-head-desc">Pedidos en toda España. Calidad comprobada. Respuesta inmediata.</p>
-    </div>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card reveal d1">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"La camiseta del Madrid llegó perfecta. Igual que en las fotos, calidad top y el dorsal quedó muy bien hecho. En menos de 5 minutos me confirmaron el pedido."</p>
-      <div class="review-meta">
-        <div class="review-avatar">⚽</div>
-        <div><div class="review-author">Carlos M.</div><div class="review-team">Camiseta Real Madrid 25-26</div></div>
-        <div class="review-badge">Verificado</div>
-      </div>
-    </div>
-    <div class="review-card reveal d2">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Pedí la del Barça con dorsal personalizado y el resultado es espectacular. Precio imbatible comparado con la tienda oficial. Muy recomendable."</p>
-      <div class="review-meta">
-        <div class="review-avatar">🔵</div>
-        <div><div class="review-author">Adrià F.</div><div class="review-team">Camiseta FC Barcelona 25-26</div></div>
-        <div class="review-badge">Verificado</div>
-      </div>
-    </div>
-    <div class="review-card reveal d3">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Llevaba tiempo buscando la retro del Milan del 94 y aquí la encontré. Llegó bien embalada y el material es excelente. Repetiré sin duda."</p>
-      <div class="review-meta">
-        <div class="review-avatar">🔴</div>
-        <div><div class="review-author">Javi S.</div><div class="review-team">Camiseta Retro AC Milan</div></div>
-        <div class="review-badge">Verificado</div>
-      </div>
-    </div>
-    <div class="review-card reveal d4">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Pedí dos camisetas del Mundial para verlas juntos con mi hijo. Llegaron perfectas y Pepe respondió en minutos. Servicio 10/10, ya somos clientes fijos."</p>
-      <div class="review-meta">
-        <div class="review-avatar">🏆</div>
-        <div><div class="review-author">Roberto G.</div><div class="review-team">Selección España Mundial 2026</div></div>
-        <div class="review-badge">Verificado</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="consulta" class="consulta-top">
   <div class="consulta-card reveal">
@@ -781,44 +720,91 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
       <p class="sec-head-desc">Todas las ligas, temporadas y selecciones. Camisetas de fútbol baratas con calidad premium. Filtra y encuentra la tuya.</p>
     </div>
   </div>
-  <div class="filters reveal">
-    <div class="fg">
-      <div class="flabel">Liga</div>
-      <select class="fsel" id="fLeague">
-        <option value="">Todas las ligas</option>
-        <option value="LaLiga">LaLiga</option>
-        <option value="Premier League">Premier League</option>
-        <option value="Serie A">Serie A</option>
-        <option value="Bundesliga">Bundesliga</option>
-        <option value="Ligue 1">Ligue 1</option>
-        <option value="Otros Europa">Otros Europa</option>
-        <option value="Sudamérica">Sudamérica</option>
-        <option value="Mundial 2026">Mundial 2026</option>
-      </select>
+  <div class="catalogo-wrap">
+    <div class="catalogo-main">
+      <div class="filters reveal">
+        <div class="fg">
+          <div class="flabel">Liga</div>
+          <select class="fsel" id="fLeague">
+            <option value="">Todas las ligas</option>
+            <option value="LaLiga">LaLiga</option>
+            <option value="Premier League">Premier League</option>
+            <option value="Serie A">Serie A</option>
+            <option value="Bundesliga">Bundesliga</option>
+            <option value="Ligue 1">Ligue 1</option>
+            <option value="Otros Europa">Otros Europa</option>
+            <option value="Sudamérica">Sudamérica</option>
+            <option value="Mundial 2026">Mundial 2026</option>
+          </select>
+        </div>
+        <div class="fg">
+          <div class="flabel">Tipo</div>
+          <select class="fsel" id="fType">
+            <option value="">Todos</option>
+            <option value="25-26">Temporada 25-26</option>
+            <option value="Retro">Retro</option>
+            <option value="Mundial">Mundial 2026</option>
+            <option value="Sudamérica">Sudamérica</option>
+          </select>
+        </div>
+      </div>
+      <div class="tabs" id="tabs">
+        <div class="tab on" data-l="">🌍 Todas</div>
+        <div class="tab" data-l="LaLiga">🇪🇸 LaLiga</div>
+        <div class="tab" data-l="Premier League">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier</div>
+        <div class="tab" data-l="Serie A">🇮🇹 Serie A</div>
+        <div class="tab" data-l="Bundesliga">🇩🇪 Bundesliga</div>
+        <div class="tab" data-l="Ligue 1">🇫🇷 Ligue 1</div>
+        <div class="tab" data-l="Otros Europa">🌐 Europa</div>
+        <div class="tab" data-l="Sudamérica">🌎 Sudamérica</div>
+        <div class="tab world-tab" data-l="Mundial 2026">🏆 Mundial 26</div>
+      </div>
+      <div class="grid" id="catalogGrid"></div>
     </div>
-    <div class="fg">
-      <div class="flabel">Tipo</div>
-      <select class="fsel" id="fType">
-        <option value="">Todos</option>
-        <option value="25-26">Temporada 25-26</option>
-        <option value="Retro">Retro</option>
-        <option value="Mundial">Mundial 2026</option>
-        <option value="Sudamérica">Sudamérica</option>
-      </select>
-    </div>
+    <aside class="catalogo-aside">
+      <div class="aside-title">Lo que dicen nuestros clientes ★★★★★</div>
+      <div class="aside-review">
+        <div class="aside-stars">★★★★★</div>
+        <p class="aside-text">"La camiseta del Madrid llegó perfecta. Calidad top y el dorsal quedó muy bien hecho. En menos de 5 minutos me confirmaron el pedido."</p>
+        <div class="aside-meta">
+          <div class="aside-avatar">⚽</div>
+          <div><div class="aside-author">Carlos M.</div><div class="aside-team">Real Madrid 25-26</div></div>
+          <div class="aside-badge">Verificado</div>
+        </div>
+      </div>
+      <div class="aside-review">
+        <div class="aside-stars">★★★★★</div>
+        <p class="aside-text">"Pedí la del Barça con dorsal personalizado y el resultado es espectacular. Precio imbatible comparado con la tienda oficial."</p>
+        <div class="aside-meta">
+          <div class="aside-avatar">🔵</div>
+          <div><div class="aside-author">Adrià F.</div><div class="aside-team">FC Barcelona 25-26</div></div>
+          <div class="aside-badge">Verificado</div>
+        </div>
+      </div>
+      <div class="aside-review">
+        <div class="aside-stars">★★★★★</div>
+        <p class="aside-text">"La retro del Milan del 94 llegó bien embalada y el material es excelente. Llevaba tiempo buscándola. Repetiré sin duda."</p>
+        <div class="aside-meta">
+          <div class="aside-avatar">🔴</div>
+          <div><div class="aside-author">Javi S.</div><div class="aside-team">Retro AC Milan</div></div>
+          <div class="aside-badge">Verificado</div>
+        </div>
+      </div>
+      <div class="aside-review">
+        <div class="aside-stars">★★★★★</div>
+        <p class="aside-text">"Dos camisetas del Mundial para verlas con mi hijo. Llegaron perfectas y Pepe respondió en minutos. Ya somos clientes fijos."</p>
+        <div class="aside-meta">
+          <div class="aside-avatar">🏆</div>
+          <div><div class="aside-author">Roberto G.</div><div class="aside-team">España Mundial 2026</div></div>
+          <div class="aside-badge">Verificado</div>
+        </div>
+      </div>
+      <div class="player-notice">
+        <strong>⚠️ ¿Versión Player o Fan?</strong>
+        Algunas camisetas están disponibles en versión <strong style="color:var(--gold-l)">Player (+5€)</strong> — tela más fina, corte entallado y tecnología de juego real. Si tienes dudas sobre qué versión tenemos en stock, <strong style="color:var(--w)">consúltanos por Telegram antes de hacer el pedido</strong>.
+      </div>
+    </aside>
   </div>
-  <div class="tabs" id="tabs">
-    <div class="tab on" data-l="">🌍 Todas</div>
-    <div class="tab" data-l="LaLiga">🇪🇸 LaLiga</div>
-    <div class="tab" data-l="Premier League">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier</div>
-    <div class="tab" data-l="Serie A">🇮🇹 Serie A</div>
-    <div class="tab" data-l="Bundesliga">🇩🇪 Bundesliga</div>
-    <div class="tab" data-l="Ligue 1">🇫🇷 Ligue 1</div>
-    <div class="tab" data-l="Otros Europa">🌐 Europa</div>
-    <div class="tab" data-l="Sudamérica">🌎 Sudamérica</div>
-    <div class="tab world-tab" data-l="Mundial 2026">🏆 Mundial 26</div>
-  </div>
-  <div class="grid" id="catalogGrid"></div>
 </section>
 
 <section id="novedades">
@@ -1666,23 +1652,6 @@ window.addEventListener('scroll',()=>{const bg=document.querySelector('.hero-bg'
   vcards.forEach(vc=>{
     io.observe(vc);
     const vid=vc.querySelector('video');
-    const btn=vc.querySelector('.vcard-mute');
-    if(!btn||!vid)return;
-    btn.addEventListener('click',e=>{
-      e.stopPropagation();
-      vid.muted=!vid.muted;
-      btn.querySelector('.ico-mute').style.display=vid.muted?'':'none';
-      btn.querySelector('.ico-sound').style.display=vid.muted?'none':'';
-      if(!vid.muted){
-        // mute all other videos
-        vcards.forEach(other=>{
-          if(other===vc)return;
-          const ov=other.querySelector('video');if(ov){ov.muted=true;}
-          const ob=other.querySelector('.vcard-mute');
-          if(ob){ob.querySelector('.ico-mute').style.display='';ob.querySelector('.ico-sound').style.display='none';}
-        });
-      }
-    });
   });
 })();
 

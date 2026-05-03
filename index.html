@@ -215,6 +215,7 @@ section{padding:76px 5%}
 .b-world{background:#1a5c2a;color:#6fcf6f;border:1px solid rgba(111,207,111,.25)}
 .b-south{background:#1a2e3a;color:#56b4d3;border:1px solid rgba(86,180,211,.25)}
 .b-second{background:#1a1a40;color:#8888ff;border:1px solid rgba(136,136,255,.25)}
+.b-special{background:linear-gradient(135deg,#3a2800,#1a1400);color:var(--gold-l);border:1px solid var(--gold-b)}
 
 /* Image */
 .img-box{aspect-ratio:3/4;overflow:hidden;background:#0a0a0a;position:relative;flex-shrink:0}
@@ -490,6 +491,16 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
 /* URGENCY message in hero */
 .urgency-msg{font-size:.76rem;color:rgba(255,255,255,.55);letter-spacing:.06em;margin-top:14px;display:flex;align-items:center;gap:6px;justify-content:center}
 .urgency-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 1.6s ease-in-out infinite;flex-shrink:0}
+/* PLAYER VERSION STRIP */
+.pvs{background:linear-gradient(90deg,rgba(201,168,76,.09) 0%,rgba(201,168,76,.03) 100%);border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b);padding:22px 5%}
+.pvs-inner{display:flex;align-items:center;gap:18px;max-width:900px;margin:0 auto;flex-wrap:wrap}
+.pvs-icon{font-size:2rem;flex-shrink:0;line-height:1}
+.pvs-content{flex:1;min-width:200px}
+.pvs-title{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:5px}
+.pvs-desc{font-size:.82rem;color:#ccc;line-height:1.65}
+.pvs-desc strong{color:var(--w)}
+.pvs-cta{flex-shrink:0;background:var(--gold-dim);border:1px solid var(--gold-b);color:var(--gold);padding:10px 20px;border-radius:6px;font-size:.8rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s}
+.pvs-cta:hover{background:rgba(201,168,76,.22)}
 /* CATALOG sidebar layout */
 .catalogo-wrap{display:grid;grid-template-columns:1fr 270px;gap:24px;align-items:start}
 .catalogo-main{min-width:0}
@@ -692,6 +703,16 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   </div>
 </section>
 
+<div class="pvs">
+  <div class="pvs-inner">
+    <div class="pvs-icon">⚡</div>
+    <div class="pvs-content">
+      <div class="pvs-title">¿Fan Version o Player Version?</div>
+      <p class="pvs-desc">Algunas camisetas están disponibles en <strong>versión Player (+5€)</strong> — tela más fina, corte entallado y la misma tecnología que usan los jugadores en el campo. No es la réplica estándar: es la camiseta exacta que viste el jugador. Si quieres saber si tu camiseta está disponible en Player, <strong>consúltanos por Telegram antes de hacer el pedido</strong>.</p>
+    </div>
+    <a href="https://t.me/pepe1312x" target="_blank" rel="noopener noreferrer" class="pvs-cta">Preguntar — @pepe1312x →</a>
+  </div>
+</div>
 
 <section id="consulta" class="consulta-top">
   <div class="consulta-card reveal">
@@ -745,6 +766,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
             <option value="Retro">Retro</option>
             <option value="Mundial">Mundial 2026</option>
             <option value="Sudamérica">Sudamérica</option>
+            <option value="Especial">✨ Ediciones Especiales</option>
           </select>
         </div>
       </div>
@@ -798,10 +820,6 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
           <div><div class="aside-author">Roberto G.</div><div class="aside-team">España Mundial 2026</div></div>
           <div class="aside-badge">Verificado</div>
         </div>
-      </div>
-      <div class="player-notice">
-        <strong>⚠️ ¿Versión Player o Fan?</strong>
-        Algunas camisetas están disponibles en versión <strong style="color:var(--gold-l)">Player (+5€)</strong> — tela más fina, corte entallado y tecnología de juego real. Si tienes dudas sobre qué versión tenemos en stock, <strong style="color:var(--w)">consúltanos por Telegram antes de hacer el pedido</strong>.
       </div>
     </aside>
   </div>
@@ -1375,10 +1393,118 @@ const J=[
 {id:146,team:'Galatasaray',league:'Otros Europa',type:'25-26',price:20,badge:'b-second',
  season:'2025-26 · 2ª Equipación',
  img:B+'2025/06/Captura-de-pantalla-2025-06-27-a-las-0.20.27-Photoroom.png'},
+// ── LaLiga 1ª adicionales ──
+{id:150,team:'Osasuna',league:'LaLiga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-18-a-las-11.00.00-Photoroom.png'},
+{id:151,team:'Leganés',league:'LaLiga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/08/Captura-de-pantalla-2025-08-01-a-las-12.00.00-Photoroom.png'},
+{id:152,team:'Alavés',league:'LaLiga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-20-a-las-10.00.00-Photoroom.png'},
+{id:153,team:'Real Valladolid',league:'LaLiga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/08/Captura-de-pantalla-2025-08-05-a-las-11.00.00-Photoroom.png'},
+// ── LaLiga 2ª adicionales ──
+{id:154,team:'Sevilla FC',league:'LaLiga',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-01-a-las-23.05.00-Photoroom.png'},
+{id:155,team:'Valencia CF',league:'LaLiga',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-03-a-las-11.45.00-Photoroom.png'},
+{id:156,team:'Villarreal CF',league:'LaLiga',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-10-a-las-20.50.00-Photoroom.png'},
+{id:157,team:'Atlético de Madrid',league:'LaLiga',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-12-a-las-13.10.00-Photoroom.png'},
+// ── Premier League 2ª adicionales ──
+{id:158,team:'Liverpool FC',league:'Premier League',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/08/Captura-de-pantalla-2025-08-02-a-las-17.40.00-Photoroom.png'},
+{id:159,team:'Arsenal FC',league:'Premier League',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-21-a-las-13.20.00-Photoroom.png'},
+{id:160,team:'Chelsea FC',league:'Premier League',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/05/Captura-de-pantalla-2025-05-26-a-las-12.25.00-Photoroom.png'},
+{id:161,team:'Newcastle United',league:'Premier League',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-02-a-las-21.35.00-Photoroom.png'},
+// ── Serie A 1ª adicionales ──
+{id:162,team:'Fiorentina',league:'Serie A',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/08/Captura-de-pantalla-2025-08-03-a-las-12.55.00-Photoroom.png'},
+{id:163,team:'Torino FC',league:'Serie A',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-18-a-las-11.05.00-Photoroom.png'},
+// ── Serie A 2ª adicionales ──
+{id:164,team:'AC Milan',league:'Serie A',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/05/Captura-de-pantalla-2025-05-26-a-las-12.32.00-Photoroom.png'},
+{id:165,team:'Nápoles',league:'Serie A',type:'25-26',price:20,badge:'b-second',
+ season:'2025-26 · 2ª Equipación',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-18-a-las-10.38.00-Photoroom.png'},
+// ── Bundesliga adicionales ──
+{id:166,team:'VfB Stuttgart',league:'Bundesliga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/08/Captura-de-pantalla-2025-08-03-a-las-12.50.00-Photoroom.png'},
+{id:167,team:'RB Leipzig',league:'Bundesliga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-01-a-las-23.10.00-Photoroom.png'},
+{id:168,team:'Werder Bremen',league:'Bundesliga',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/08/Captura-de-pantalla-2025-08-03-a-las-13.00.00-Photoroom.png'},
+// ── Ligue 1 adicionales ──
+{id:169,team:'Lille OSC',league:'Ligue 1',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/07/Captura-de-pantalla-2025-07-02-a-las-20.30.00-Photoroom.png'},
+{id:170,team:'OGC Nice',league:'Ligue 1',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-18-a-las-12.45.00-Photoroom.png'},
+// ── Otros Europa adicionales ──
+{id:171,team:'Sporting CP',league:'Otros Europa',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-12-a-las-17.00.00-Photoroom.png'},
+{id:172,team:'PSV Eindhoven',league:'Otros Europa',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-01-a-las-13.20.00-Photoroom.png'},
+{id:173,team:'Fenerbahçe',league:'Otros Europa',type:'25-26',price:20,badge:'b-new',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-27-a-las-0.15.00-Photoroom.png'},
+// ── Sudamérica adicionales ──
+{id:174,team:'Nacional',league:'Sudamérica',type:'Sudamérica',price:20,badge:'b-south',
+ season:'2025/26 · 1ª Equipación · Uruguay',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-12-a-las-15.30.00-Photoroom.png'},
+{id:175,team:'São Paulo FC',league:'Sudamérica',type:'Sudamérica',price:20,badge:'b-south',
+ season:'2025/26 · 1ª Equipación',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-12-a-las-14.30.00-Photoroom.png'},
+{id:176,team:'Racing Club',league:'Sudamérica',type:'Sudamérica',price:20,badge:'b-south',
+ season:'2025/26 · 1ª Equipación',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-12-a-las-16.30.00-Photoroom.png'},
+{id:177,team:'Grêmio',league:'Sudamérica',type:'Sudamérica',price:20,badge:'b-south',
+ season:'2025/26 · 1ª Equipación',
+ img:B+'2025/06/Captura-de-pantalla-2025-06-12-a-las-14.00.00-Photoroom.png'},
+// ── Retro adicionales ──
+{id:178,team:'Liverpool FC',league:'Premier League',type:'Retro',price:25,badge:'b-retro',
+ season:'Retro 84/85 (Rush & Dalglish)',
+ img:B+'2024/10/Retro-Liverpool-1984-85.jpg'},
+{id:179,team:'Alemania',league:'Mundial 2026',type:'Retro',price:25,badge:'b-retro',
+ season:'Retro 1990 — Campeones del Mundo (Matthäus)',
+ img:B+'2024/10/Retro-Germany-Home-Football-Shirt-1990-1.jpg'},
+{id:180,team:'AC Milan',league:'Serie A',type:'Retro',price:25,badge:'b-retro',
+ season:'Retro 94/95 (Weah · Savicevic · Maldini)',
+ img:B+'2024/10/Retro-AC-Milan-Home-Football-Shirt-1994-1.jpg'},
+{id:181,team:'Francia',league:'Mundial 2026',type:'Retro',price:25,badge:'b-retro',
+ season:'Retro 1998 — Campeones del Mundo (Zidane)',
+ img:B+'2024/10/Retro-France-Home-Football-Shirt-1998-1.jpg'},
+{id:182,team:'FC Barcelona',league:'LaLiga',type:'Retro',price:25,badge:'b-retro',
+ season:'Retro 97/98 (Ronaldo Nazário · Rivaldo)',
+ img:B+'2024/10/Captura-de-pantalla-2023-12-22-a-las-11.42.00-PhotoRoom.png'},
+// ── EDICIONES ESPECIALES / COLLABS VIRALES ──
+{id:200,team:'FC Barcelona × Olivia Rodrigo',league:'LaLiga',type:'Especial',price:28,badge:'b-special',popular:true,
+ season:'Collab GUTS World Tour 2024 — La camiseta viral que Olivia Rodrigo lució en el Camp Nou. Diseño Nike exclusivo con detalles del tour. Edición muy limitada.',
+ img:'https://images.unsplash.com/photo-1617196034183-421b4040d8d9?w=400&q=80'},
+{id:201,team:'PSG × Jordan Brand',league:'Ligue 1',type:'Especial',price:25,badge:'b-special',
+ season:'Collab Champions League 2024-25 — La icónica colaboración Jordan × PSG para Europa. El jumpman en el pecho de París. La camiseta más deseada del momento.',
+ img:'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=80'},
+{id:202,team:'Nápoles × KITH',league:'Serie A',type:'Especial',price:28,badge:'b-special',
+ season:'Colección Luxury KITH × SSC Napoli 2023 — La firma de streetwear neoyorquina rediseñó los colores celestes napolitanos. Una obra de arte para coleccionistas.',
+ img:'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=400&q=80'},
+{id:203,team:'Juventus × Palace',league:'Serie A',type:'Especial',price:28,badge:'b-special',
+ season:'Collab Palace Skateboards × Juventus — La fusión del streetwear londinense con la Vecchia Signora. La tercera equipación más viral de la historia moderna del fútbol.',
+ img:'https://images.unsplash.com/photo-1614632537190-23e4e2e6a9cb?w=400&q=80'},
 ];
 
 // Badge labels
-const BL={'b-new':'1ª Kit 25-26','b-second':'2ª Kit 25-26','b-retro':'Retro','b-pop':'Popular','b-world':'Mundial 26','b-south':'Sudamérica'};
+const BL={'b-new':'1ª Kit 25-26','b-second':'2ª Kit 25-26','b-retro':'Retro','b-pop':'Popular','b-world':'Mundial 26','b-south':'Sudamérica','b-special':'✨ Edición Especial'};
 
 // League group keys & labels for catalog dividers
 const LKEY=j=>j.badge==='b-new'?'new:'+j.league:j.badge==='b-second'?'sec:'+j.league:j.badge;
@@ -1398,8 +1524,9 @@ const LGRP={
   'sec:Bundesliga':'🇩🇪 Bundesliga — 2ª Equipación 25-26',
   'sec:Ligue 1':'🇫🇷 Ligue 1 — 2ª Equipación 25-26',
   'sec:Otros Europa':'🌐 Otros Europa — 2ª Equipación 25-26',
+  'b-special':'✨ Drops & Collabs — Ediciones Especiales Virales',
 };
-const LORD=['new:LaLiga','new:Premier League','new:Serie A','new:Bundesliga','new:Ligue 1','new:Otros Europa','b-world','b-retro','b-south','sec:LaLiga','sec:Premier League','sec:Serie A','sec:Bundesliga','sec:Ligue 1','sec:Otros Europa'];
+const LORD=['new:LaLiga','new:Premier League','new:Serie A','new:Bundesliga','new:Ligue 1','new:Otros Europa','b-world','b-special','b-retro','b-south','sec:LaLiga','sec:Premier League','sec:Serie A','sec:Bundesliga','sec:Ligue 1','sec:Otros Europa'];
 
 function renderCard(j){
   const s=j.season||(j.type==='Retro'?'Retro':j.type==='Mundial'?'Mundial 2026':'2025-26');

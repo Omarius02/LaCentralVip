@@ -14,10 +14,10 @@
 
 <!-- Open Graph (redes sociales) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://centralkits.vercel.app/">
+<meta property="og:url" content="https://centralkits.es/">
 <meta property="og:title" content="Central Kits | Camisetas de Fútbol Premium desde 20€">
 <meta property="og:description" content="Más de 130 camisetas de fútbol — LaLiga, Premier League, Serie A, Bundesliga, Mundial 2026, Retro y Sudamérica. Personalización con dorsal y parche. Pide por Telegram al instante.">
-<meta property="og:image" content="https://centralkits.vercel.app/assets/logo.svg">
+<meta property="og:image" content="https://centralkits.es/assets/logo.svg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Central Kits">
 
@@ -25,10 +25,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Central Kits | Camisetas de Fútbol desde 20€">
 <meta name="twitter:description" content="130+ camisetas premium — LaLiga, Premier, Mundial 2026 y más. Dorsal y parche disponible. @pepe1312x en Telegram.">
-<meta name="twitter:image" content="https://centralkits.vercel.app/assets/logo.svg">
+<meta name="twitter:image" content="https://centralkits.es/assets/logo.svg">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://centralkits.vercel.app/">
+<link rel="canonical" href="https://centralkits.es/">
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <link rel="apple-touch-icon" href="assets/logo.svg">
 
@@ -41,8 +41,8 @@
       "@type":"Store",
       "name":"Central Kits",
       "description":"Tienda de camisetas de fútbol premium. Temporada 25-26, Mundial 2026, colección Retro y Sudamérica desde 20€. Personalización con dorsal y parche.",
-      "url":"https://centralkits.vercel.app",
-      "logo":"https://centralkits.vercel.app/assets/logo.svg",
+      "url":"https://centralkits.es",
+      "logo":"https://centralkits.es/assets/logo.svg",
       "priceRange":"20€–28€",
       "currenciesAccepted":"EUR",
       "contactPoint":{"@type":"ContactPoint","contactType":"customer service","url":"https://t.me/pepe1312x"},
@@ -118,6 +118,10 @@ footer{background:rgba(3,3,3,.90)!important}
 .dinput:focus{border-color:var(--gold)}
 .dinput::placeholder{color:var(--g)}
 .dlbl{font-size:.63rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.ex-desc{font-size:.68rem;color:var(--g);font-weight:400;margin-top:3px;line-height:1.45;max-width:200px}
+.m-notice{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.m-notice-item{font-size:.72rem;color:var(--gl);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.m-notice-item span{flex-shrink:0}
 .addr-toggle{display:flex;align-items:center;gap:10px;margin-bottom:6px;cursor:pointer;user-select:none}
 .addr-toggle input[type=checkbox]{width:16px;height:16px;accent-color:var(--gold);cursor:pointer;flex-shrink:0}
 .addr-toggle span{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--g)}
@@ -143,6 +147,7 @@ nav.scrolled{background:rgba(4,12,4,.94)}
 .nav-ul .mundial-a:hover{background:var(--green-dim);color:#fff}
 .nav-ul .cta-a{background:var(--gold)!important;color:#000!important;padding:6px 16px;border-radius:2px;font-weight:700!important}
 .nav-ul .cta-a:hover{background:var(--gold-l)!important}
+.nav-ul a.nav-active{color:var(--gold)!important;border-bottom:2px solid var(--gold);padding-bottom:2px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .burger span{display:block;width:22px;height:2px;background:var(--w);border-radius:2px;transition:all .3s}
 
@@ -374,7 +379,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
 .bg-layer{position:fixed;inset:0;z-index:-2;background:url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1920&q=80') center/cover no-repeat}
 /* Trust bar */
 .trust-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:0;background:rgba(201,168,76,.05);border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b)}
-.trust-item{display:flex;align-items:center;gap:9px;padding:16px 26px;font-size:.78rem;font-weight:600;color:var(--gl);letter-spacing:.04em;position:relative}
+.trust-item{display:flex;align-items:center;gap:9px;padding:16px 26px;font-size:.78rem;font-weight:600;color:#e8e8e8;letter-spacing:.04em;position:relative}
 .trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:var(--gold-b)}
 .trust-item svg{color:var(--gold);flex-shrink:0}
 @media(max-width:600px){.trust-item{padding:12px 16px;font-size:.72rem}.trust-item:not(:last-child)::after{display:none}}
@@ -403,12 +408,13 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
     CENTRAL <span>KITS</span>
   </a>
   <ul class="nav-ul" id="navUl">
-    <li><a href="#novedades">25-26</a></li>
-    <li><a href="#mundial" class="mundial-a">Mundial 2026</a></li>
-    <li><a href="#retro">Retro</a></li>
-    <li><a href="#catalogo">Catálogo</a></li>
-    <li><a href="#sudamerica">Sudamérica</a></li>
-    <li><a href="#comprar" class="cta-a">Comprar</a></li>
+    <li><a href="#inicio" class="nav-link" data-sec="inicio">Inicio</a></li>
+    <li><a href="#novedades" class="nav-link" data-sec="novedades">25-26</a></li>
+    <li><a href="#mundial" class="mundial-a nav-link" data-sec="mundial">Mundial 2026</a></li>
+    <li><a href="#retro" class="nav-link" data-sec="retro">Retro</a></li>
+    <li><a href="#catalogo" class="nav-link" data-sec="catalogo">Catálogo</a></li>
+    <li><a href="#sudamerica" class="nav-link" data-sec="sudamerica">Sudamérica</a></li>
+    <li><a href="#comprar" class="cta-a nav-link" data-sec="comprar">Comprar</a></li>
   </ul>
   <button class="burger" id="burger"><span></span><span></span><span></span></button>
 </nav>
@@ -730,6 +736,7 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
           <div class="ex" data-e="dorsal" data-c="3"><div class="eck"></div><div class="enm">Añadir dorsal</div><div class="epr">+3€</div></div>
           <div class="ex" data-e="parche" data-c="3"><div class="eck"></div><div class="enm">Añadir parche</div><div class="epr">+3€</div></div>
           <div class="ex" data-e="combo" data-c="5"><div class="eck"></div><div class="enm">Dorsal + Parche <span style="color:var(--green);font-size:.75rem">(ahorro 1€)</span></div><div class="epr">+5€</div></div>
+          <div class="ex" data-e="player" data-c="5"><div class="eck"></div><div class="enm">Versión Player<div class="ex-desc">Tejido técnico más ligero y transpirable, corte ajustado al cuerpo y acabados auténticos de partido — igual que la que usan los jugadores</div></div><div class="epr">+5€</div></div>
         </div>
         <div class="dorsal-fields" id="dorsalFields">
           <div>
@@ -780,6 +787,10 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
           </div>
         </div>
         <div class="m-tot"><div class="m-tot-l">Total</div><div class="m-tot-v" id="mTotal">20€</div></div>
+        <div class="m-notice">
+          <div class="m-notice-item"><span>🚚</span> Plazo de envío estimado: <strong style="color:var(--w)">~10 días laborables</strong></div>
+          <div class="m-notice-item"><span>⚠️</span> Sujeto a disponibilidad — se confirma por Telegram antes de procesar</div>
+        </div>
         <a id="mBuy" href="https://t.me/pepe1312x" target="_blank" rel="noopener noreferrer" class="btn-buy">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           Comprar por Telegram
@@ -1259,9 +1270,12 @@ document.querySelectorAll('.ex').forEach(row=>{
     if(e==='combo'){
       if(row.classList.contains('on')){row.classList.remove('on');ck.innerHTML='';cExtras.delete('combo');}
       else{
-        document.querySelectorAll('.ex').forEach(r=>{r.classList.remove('on');r.querySelector('.eck').innerHTML='';cExtras.delete(r.dataset.e);});
+        ['dorsal','parche'].forEach(x=>{const xr=document.querySelector(`[data-e="${x}"]`);if(xr){xr.classList.remove('on');xr.querySelector('.eck').innerHTML='';cExtras.delete(x);}});
         row.classList.add('on');ck.innerHTML='';cExtras.add('combo');
       }
+    }else if(e==='player'){
+      if(row.classList.contains('on')){row.classList.remove('on');ck.innerHTML='';cExtras.delete('player');}
+      else{row.classList.add('on');ck.innerHTML='';cExtras.add('player');}
     }else{
       if(cExtras.has('combo')){const cr=document.querySelector('[data-e="combo"]');cr.classList.remove('on');cr.querySelector('.eck').innerHTML='';cExtras.delete('combo');}
       if(row.classList.contains('on')){row.classList.remove('on');ck.innerHTML='';cExtras.delete(e);}
@@ -1288,11 +1302,15 @@ function updateTotal(){
   const num=document.getElementById('dorsalNum')?.value.trim()||'';
   const hasDorsal=cExtras.has('dorsal')||cExtras.has('combo');
   const dorsalInfo=hasDorsal&&(name||num)?`\n🔢 Dorsal: ${num?'#'+num+' ':''}${name}`.trimEnd():'';
-  const exLabel=cExtras.has('combo')?'Dorsal + Parche (combo)':[...cExtras].map(x=>({dorsal:'Dorsal',parche:'Parche'}[x]||x)).join(' + ')||'Sin extras';
+  const exParts=[];
+  if(cExtras.has('combo'))exParts.push('Dorsal + Parche (combo)');
+  else{if(cExtras.has('dorsal'))exParts.push('Dorsal');if(cExtras.has('parche'))exParts.push('Parche');}
+  if(cExtras.has('player'))exParts.push('Versión Player');
+  const exLabel=exParts.join(' + ')||'Sin extras';
   const hasAddr=document.getElementById('addrToggle')?.checked;
   const g=id=>document.getElementById(id)?.value.trim()||'';
   const addrInfo=hasAddr?`\n📦 Dirección de envío:\n   ${g('addrNombre')}\n   ${g('addrDir')}\n   ${g('addrCiudad')}, ${g('addrCP')}\n   ${g('addrProv')}, ${g('addrPais')}\n   📞 ${g('addrTel')}`:'';
-  const msg=encodeURIComponent(`Hola! Quiero pedir:\n${cJ.flag||''}${cJ.team}\n📅 ${cJ.type==='Mundial'?'Mundial 2026':cJ.type}\n👕 Talla: ${sz}\n✨ Extras: ${exLabel}${dorsalInfo}\n💰 Total: ${t}€${addrInfo}`);
+  const msg=encodeURIComponent(`Hola! Quiero pedir:\n${cJ.flag||''}${cJ.team}\n📅 ${cJ.type==='Mundial'?'Mundial 2026':cJ.type}\n👕 Talla: ${sz}\n✨ Extras: ${exLabel}${dorsalInfo}\n💰 Total: ${t}€${addrInfo}\n🖼️ ${cJ.img}`);
   document.getElementById('mBuy').href=`https://t.me/pepe1312x?text=${msg}`;
 }
 ['dorsalName','dorsalNum'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',updateTotal);});
@@ -1341,6 +1359,19 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('navUl').classList.toggle('open'));
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40),{passive:true});
 window.addEventListener('scroll',()=>{const bg=document.querySelector('.hero-bg');if(bg)bg.style.transform=`translateY(${scrollY*.2}px)`;},{passive:true});
+
+// Nav scroll spy
+(()=>{
+  const secs=['inicio','novedades','mundial','retro','catalogo','sudamerica','comprar'];
+  const links=document.querySelectorAll('.nav-link');
+  function setActive(){
+    let cur='inicio';
+    secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=80)cur=id;});
+    links.forEach(a=>{a.classList.toggle('nav-active',a.dataset.sec===cur&&!a.classList.contains('cta-a'));});
+  }
+  window.addEventListener('scroll',setActive,{passive:true});
+  setActive();
+})();
 </script>
 </body>
 </html>

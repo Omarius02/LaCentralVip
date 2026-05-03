@@ -376,7 +376,9 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
   .sec-head{padding:28px 22px 24px}
 }
 /* Fixed background layer — works on all devices incl. iOS */
-.bg-layer{position:fixed;inset:0;z-index:-2;background:url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1920&q=80') center/cover no-repeat}
+.bg-layer{position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse 120% 80% at 50% 110%,rgba(0,35,10,.95) 0%,rgba(3,8,3,.98) 45%,#020402 100%)}
+/* Subtle pitch lines overlay */
+.bg-layer::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.012) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.008) 80px);pointer-events:none}
 /* Trust bar */
 .trust-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:0;background:rgba(201,168,76,.05);border-top:1px solid var(--gold-b);border-bottom:1px solid var(--gold-b)}
 .trust-item{display:flex;align-items:center;gap:9px;padding:16px 26px;font-size:.78rem;font-weight:600;color:#e8e8e8;letter-spacing:.04em;position:relative}
@@ -392,6 +394,70 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
 .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:#000}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 24px;color:var(--gl);font-size:.88rem;line-height:1.75}
 .faq-item.open .faq-a{max-height:400px;padding:0 24px 20px}
+/* ── FLOATING CTA (mobile only) ── */
+.float-buy{position:fixed;bottom:0;left:0;right:0;z-index:800;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(90deg,#0d6fa0,#1a8fca);box-shadow:0 -3px 20px rgba(0,0,0,.55);transform:translateY(110%);transition:transform .32s cubic-bezier(.4,0,.2,1);display:none}
+.float-buy.vis{transform:translateY(0)}
+.float-buy-inner{display:flex;align-items:center;gap:12px;max-width:580px;margin:0 auto}
+.float-buy-txt{flex:1;font-size:.76rem;color:rgba(255,255,255,.75);line-height:1.2}
+.float-buy-txt b{color:#fff;font-size:.86rem;display:block;margin-bottom:1px}
+.float-buy-btn{background:#fff;color:#0d6fa0;font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:10px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .15s}
+.float-buy-btn:active{background:#e8f4ff}
+@media(max-width:768px){.float-buy{display:block}}
+
+/* ── MODAL social proof ── */
+.m-viewing{display:flex;align-items:center;gap:6px;font-size:.71rem;color:var(--gl);margin-bottom:8px}
+.m-vdot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 1.8s ease-in-out infinite;flex-shrink:0}
+.m-compare{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.m-compare-old{font-size:.82rem;color:var(--g);text-decoration:line-through}
+.m-save{font-size:.62rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;background:var(--green-dim);color:var(--green);border:1px solid var(--green-b);padding:2px 8px;border-radius:10px}
+.m-stock{font-size:.7rem;color:#e8906a;display:flex;align-items:center;gap:5px;margin-bottom:10px}
+.m-stock::before{content:'';width:6px;height:6px;border-radius:50%;background:#e8906a;animation:blink 1.5s ease-in-out infinite;flex-shrink:0}
+
+/* ── MOBILE BOTTOM SHEET modal ── */
+@media(max-width:520px){
+  .modal-ov{align-items:flex-end;padding:0;background:rgba(0,0,0,.65)}
+  .modal{border-radius:20px 20px 0 0;max-height:94vh;border:1px solid rgba(255,255,255,.08);border-bottom:none}
+  .modal-l{min-height:200px;padding:18px;border-right:none;border-bottom:1px solid var(--border)}
+  #mImg{max-height:190px}
+  .modal-r{padding:16px 16px 28px}
+}
+
+/* ── MOBILE TAP TARGETS ── */
+@media(max-width:768px){
+  .sz{min-height:42px;font-size:.82rem}
+  .ex{padding:12px 13px}
+  .quick,.btn-buy,.btn-gold,.btn-tg,.btn-out{min-height:48px}
+  .cact{padding:8px 14px}
+  section{padding:52px 4%}
+  .sec-head{padding:24px 18px 20px}
+  .grid{gap:9px}
+  .card{border-radius:8px}
+  .faq-q{min-height:50px}
+}
+
+/* ── TOUCH HOVER ── */
+@media(hover:none){
+  .card:active{transform:translateY(-4px);border-color:var(--gold-b)}
+  .btn-gold:active,.btn-tg:active{transform:translateY(-1px)}
+}
+
+/* ── SAVINGS tag on card ── */
+.card .savings-tag{position:absolute;bottom:8px;left:8px;z-index:3;font-size:.52rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:2px;background:rgba(46,204,113,.15);color:var(--green);border:1px solid rgba(46,204,113,.3)}
+
+/* ── SCARCITY in section header ── */
+.scarcity-note{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:#e8906a;font-weight:600;margin-top:8px}
+.scarcity-note::before{content:'';width:6px;height:6px;border-radius:50%;background:#e8906a;animation:blink 1.5s ease-in-out infinite;flex-shrink:0}
+
+/* ── PRICE SECTION: vs oficial ── */
+.pt-compare{font-size:.68rem;color:var(--g);text-decoration:line-through;display:block;margin-top:3px}
+.pt-save{font-size:.62rem;font-weight:800;color:var(--green);letter-spacing:.06em;display:block;margin-top:2px}
+
+/* ── NAV mobile active fix ── */
+@media(max-width:768px){.nav-ul a.nav-active:not(.cta-a){border-bottom:none}}
+
+/* ── BODY with bottom padding for float btn ── */
+@media(max-width:768px){body{padding-bottom:68px}}
+
 /* League section dividers inside catalog grid */
 .ld{grid-column:1/-1;display:flex;align-items:center;padding:28px 0 10px;font-family:'Oswald',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:8px}
 .ld::before,.ld::after{content:'';flex:1;height:1px}
@@ -704,9 +770,9 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
     </div>
   </div>
   <div class="prices">
-    <div class="pt reveal d1"><span class="am">20€</span><div class="nm">Temporada 25-26</div><div class="ds">Todas las ligas europeas</div></div>
-    <div class="pt reveal d2"><span class="am">20€</span><div class="nm">Mundial 2026</div><div class="ds">Todas las selecciones</div></div>
-    <div class="pt reveal d3"><span class="am">25€</span><div class="nm">Colección Retro</div><div class="ds">Camisetas históricas</div></div>
+    <div class="pt reveal d1"><span class="am">20€</span><div class="nm">Temporada 25-26</div><div class="ds">Todas las ligas europeas</div><span class="pt-compare">Tienda oficial: ~90€</span><span class="pt-save">Ahorras 70€</span></div>
+    <div class="pt reveal d2"><span class="am">20€</span><div class="nm">Mundial 2026</div><div class="ds">Todas las selecciones</div><span class="pt-compare">Precio oficial: ~80€</span><span class="pt-save">Ahorras 60€</span></div>
+    <div class="pt reveal d3"><span class="am">25€</span><div class="nm">Colección Retro</div><div class="ds">Camisetas históricas</div><span class="pt-compare">Coleccionistas: ~100€</span><span class="pt-save">Ahorras 75€</span></div>
     <div class="pt reveal d4"><span class="am">+3€</span><div class="nm">Dorsal</div><div class="ds">Tu número favorito</div></div>
     <div class="pt reveal d5"><span class="am">+3€</span><div class="nm">Parche</div><div class="ds">Liga o UEFA</div></div>
     <div class="pt reveal d6"><span class="am">+5€</span><div class="nm">Dorsal + Parche</div><div class="ds">Personalización completa</div></div>
@@ -809,7 +875,13 @@ footer{background:#050505;border-top:1px solid var(--border);padding:36px 5% 24p
         <div class="ml" id="mLeague"></div>
         <div class="mt" id="mTeam"></div>
         <div class="ms" id="mSeason"></div>
-        <div class="mp" id="mPrice"></div>
+        <div class="m-viewing"><span class="m-vdot"></span><span id="mViewing">4 personas viendo ahora</span></div>
+        <div class="m-compare">
+          <div class="mp" id="mPrice"></div>
+          <span class="m-compare-old" id="mPriceOld"></span>
+          <span class="m-save" id="mSavePill"></span>
+        </div>
+        <div class="m-stock" id="mStock"></div>
         <hr class="mdiv">
         <div class="mlbl">Talla</div>
         <div class="sizes">
@@ -1326,6 +1398,18 @@ function openM(id){
   document.getElementById('mTeam').textContent=(cJ.flag||'')+' '+cJ.team;
   document.getElementById('mSeason').textContent=s;
   document.getElementById('mPrice').textContent=cJ.price+'€';
+  // Viewing counter
+  const v=Math.floor(Math.random()*9)+2;
+  document.getElementById('mViewing').textContent=v+' '+(v===1?'persona':'personas')+' viendo ahora';
+  // Price comparison
+  const oficials={Retro:110,Mundial:80};
+  const oficial=oficials[cJ.type]||90;
+  const save=Math.round((1-cJ.price/oficial)*100);
+  document.getElementById('mPriceOld').textContent='Oficial: ~'+oficial+'€';
+  document.getElementById('mSavePill').textContent='−'+save+'%';
+  // Scarcity
+  const stockMsgs=['Quedan pocas unidades','Stock muy limitado','Alta demanda esta semana'];
+  document.getElementById('mStock').textContent=stockMsgs[cJ.id%3];
   const im=document.getElementById('mImg');
   im.src=cJ.img;im.style.display='';
   document.querySelectorAll('.sz').forEach(b=>b.classList.remove('on'));
@@ -1340,9 +1424,17 @@ function openM(id){
   updateTotal();
   document.getElementById('mOv').classList.add('open');
   document.body.style.overflow='hidden';
+  document.getElementById('floatBuy').classList.remove('vis');
 }
 
-function closeM(){document.getElementById('mOv').classList.remove('open');document.getElementById('mImg').classList.remove('zoomed');document.body.style.overflow='';}
+function closeM(){
+  document.getElementById('mOv').classList.remove('open');
+  document.getElementById('mImg').classList.remove('zoomed');
+  document.body.style.overflow='';
+  setTimeout(()=>{if(scrollY>window.innerHeight*.5)document.getElementById('floatBuy').classList.add('vis');},350);
+}
+
+// closeM defined above
 document.getElementById('mClose').addEventListener('click',closeM);
 document.getElementById('mOv').addEventListener('click',e=>{if(e.target.id==='mOv')closeM()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
@@ -1447,6 +1539,15 @@ document.getElementById('burger').addEventListener('click',()=>document.getEleme
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40),{passive:true});
 window.addEventListener('scroll',()=>{const bg=document.querySelector('.hero-bg');if(bg)bg.style.transform=`translateY(${scrollY*.2}px)`;},{passive:true});
 
+// Floating CTA
+(()=>{
+  const fb=document.getElementById('floatBuy');
+  window.addEventListener('scroll',()=>{
+    if(!document.getElementById('mOv').classList.contains('open'))
+      fb.classList.toggle('vis',scrollY>window.innerHeight*.55);
+  },{passive:true});
+})();
+
 // Nav scroll spy
 (()=>{
   const secs=['inicio','novedades','mundial','retro','catalogo','sudamerica','comprar'];
@@ -1460,5 +1561,12 @@ window.addEventListener('scroll',()=>{const bg=document.querySelector('.hero-bg'
   setActive();
 })();
 </script>
+
+<div class="float-buy" id="floatBuy">
+  <div class="float-buy-inner">
+    <div class="float-buy-txt"><b>¿Ves alguna que te guste?</b>Pídela por Telegram al instante</div>
+    <a href="https://t.me/pepe1312x" target="_blank" rel="noopener noreferrer" class="float-buy-btn">💬 Pedir</a>
+  </div>
+</div>
 </body>
 </html>
